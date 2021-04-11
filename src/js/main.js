@@ -4,4 +4,4 @@ $('button').click(function () {
 	$('div').eq(2).toggleClass('active');
 });
 
-console.log($('.findme').siblings());
+$('.findme').fadeOut(1800);
