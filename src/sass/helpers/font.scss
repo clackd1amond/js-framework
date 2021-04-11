@@ -1,0 +1,33 @@
+.font-16 {
+	font-size: 16px;
+}
+.font-20 {
+	font-size: 20px;
+}
+.font-24 {
+	font-size: 24px;
+}
+.text-bold {
+	font-weight: 700;
+}
+.text-thin {
+	font-weight: 300;
+}
+.text-italic {
+	font-style: italic;
+}
+.text-primary {
+	color: $primary;
+}
+.text-success {
+	color: $success;
+}
+.text-danger {
+	color: $danger;
+}
+.text-warning {
+	color: $warning;
+}
+.text-dark {
+	color: $dark;
+}
