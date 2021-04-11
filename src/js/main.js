@@ -11,3 +11,17 @@ $('[data-count=second]').click(() => {
 $('.btn-warning').click(() => {
 	$('.w-500 div').fadeToggle(800);
 });
+
+$('.wrap').html(
+	`
+		<div class="dropdown">
+			<button class="dropdown-toggle btn btn-primary" id="dropdownMenuButton">Dropdown button</button>
+			<div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+				<a href="#" class="dropdown-item">Action #1</a>
+				<a href="#" class="dropdown-item">Action #2</a>
+				<a href="#" class="dropdown-item">Action #3</a>
+			</div>
+		</div>
+	`
+);
+$('.dropdown-toggle').dropdown();
