@@ -14,6 +14,7 @@ $.prototype.carousel = function () {
 
 		let offset = 0;
 		let slideIndex = 0;
+		dots[0].classList.add('active');
 
 		$(this[i].querySelector('[data-slide="next"]')).click((e) => {
 			e.preventDefault();
@@ -61,4 +62,40 @@ $.prototype.carousel = function () {
 	}
 };
 
-$('.carousel').carousel();
+//sliderSet = {width:num, height:num, slides: [{name:string, url:string},...]}
+
+$.prototype.createSlider = function ({ width = 700, height = 400, slides = [] }) {
+	for (let i = 0; i < this.length; i++) {
+		if (slides.length == 0) continue;
+		this[i].style.width = width + 'px';
+
+		this[i].innerHTML = `
+		<ol class="carousel-indicators"></ol>
+		<div class="carousel-inner" style="height: ${height}px">
+		<div class="carousel-slides"></div>
+		</div>
+		<a href="#" class="carousel-prev" data-slide="prev">
+		<span class="carousel-prev-icon">&lt;</span>
+		</a>
+		<a href="#" class="carousel-next" data-slide="next">
+		<span class="carousel-next-icon">&gt;</span>
+		</a>
+		`;
+
+		for (let j = 0; j < slides.length; j++) {
+			const slide = document.createElement('div');
+			slide.classList.add('carousel-item');
+			slide.innerHTML = `
+			<img
+			src="${slides[j].url}"
+			alt="${slides[j].name}"
+			/>`;
+			document.querySelector('.carousel-slides').appendChild(slide);
+
+			const dot = document.createElement('li');
+			dot.setAttribute('data-slide-to', `${j}`);
+			document.querySelector('.carousel-indicators').appendChild(dot);
+		}
+		$(this[i]).carousel();
+	}
+};

@@ -57,3 +57,22 @@ $('#trigger').click(() =>
 		},
 	})
 );
+
+$('#example-slider').createSlider({
+	width: 700,
+	height: 500,
+	slides: [
+		{
+			name: 'photo1',
+			url: 'https://images4.alphacoders.com/616/thumb-1920-616449.jpg',
+		},
+		{
+			name: 'photo2',
+			url: 'https://www.befunky.com/images/wp/wp-2016-03-photo-editing-blog-posts-6.jpg',
+		},
+		{
+			name: 'photo3',
+			url: 'https://i.pinimg.com/originals/eb/c2/05/ebc20552363d128622485a5477df76a7.jpg',
+		},
+	],
+});
